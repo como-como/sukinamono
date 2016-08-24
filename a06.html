@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>自己紹介と好きなもの</title>
+    <!--<link href="css/a07.css" rel="stylesheet">-->
+    <style>
+        #wrapper {
+            margin: 0 auto;
+            text-align: center;
+            vertical-align: middle;
+        }
+        #counter {
+            /*display: inline-block;*/
+            margin-top: 10px;
+            height: 30px;
+            width: 40px;
+            /*padding-top: 10px;*/
+            float: left;
+            vertical-align: middle;
+            color: #4682b4;
+            font-size: 16pt;
+        }
+        #prev {
+            width: 40px;
+            height: 40px;
+            background-image: url('img/prev.png');
+            float: left;
+        }
+        #next {
+            width: 40px;
+            height: 40px;
+            background-image: url('img/next.png');
+            float: left;
+        }
+        .toolbar {
+            /*overflow: hidden;*/
+            /*text-align: center;*/
+        }
+        .nav {
+            display: inline-block;
+        }
+        h1, h3 {
+            color: #4682b4;
+        }
+        .logo {
+            margin: 2rem auto;
+            line-height: 2rem;
+            font-size: 1.rem;
+        }
+        .logo a { color: #3e84b2; }
+        .logo a:hover {
+            color: #1d6aa5;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+<h1 class="logo"><a href="index.html">🏠 index</a></h1>
+<div id="wrapper">
+    <h1>厳征宇の自己紹介</h1>
+    <p>中国上海の出身です。食べること、散歩することが好きです。よろしくお願いします！</p><br>
+    <h3>飯田橋周辺食べると散歩スポット</h3>
+    <div>
+        <img  id="main_img" src="img/IMG_01.JPG" width="640">
+    </div>
+    <!--<div class="toolbar">-->
+        <div class="nav">
+            <div id="prev"></div>
+            <span id="counter"></span>
+            <div id="next"></div>
+        </div>
+    <!--</div>-->
+</div>
+<script>
+    var currentImg = 1;
+    var totalImg = 17;
+    var main_img = document.getElementById('main_img');
+    var counter = document.getElementById('counter');
+    counter.textContent = currentImg + '/' + totalImg;
+
+    var changImg = function(num) {
+        var imgNum;
+        var imgName;
+        if(currentImg + num < 1) {
+            alert('一番前の写真です！');
+        } else if(currentImg + num > totalImg) {
+            alert('最後の写真です！');
+        } else {
+            currentImg = currentImg + num;
+            if(currentImg < 10) {
+                imgNum = '0' + currentImg;
+            } else {
+                imgNum = currentImg;
+            }
+            imgName = 'img/IMG_' + imgNum + '.JPG';
+            main_img.setAttribute('src',imgName);
+            counter.textContent = currentImg + '/' + totalImg;
+        }
+    }
+
+    document.getElementById('prev').onclick = function() {
+        changImg(-1);
+    };
+    document.getElementById('next').onclick = function() {
+        changImg(1);
+    };
+</script>
+</body>
+</html>
