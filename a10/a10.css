@@ -1,0 +1,35 @@
+@charset "UTF-8";
+/* CSS Document */
+
+body {
+    background-image: url(E6A3AE.jpg);
+    margin: 0 0 0 0;
+    padding: 0 0 0 0;
+}
+p {
+    color: gold;
+    width: 550px;
+    margin: 0 auto;
+}
+strong {
+    color: black;
+    border-bottom: black;
+}
+
+.wrapper {
+    margin: auto;
+    padding: 0 0 0 0;
+    text-align: center;
+}
+h1{
+    color: indianred;
+}
+h2{
+    color: goldenrod;
+}
+
+
+
+
+
+
