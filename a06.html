@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>自己紹介と好きなもの</title>
-    <link href="css/a07.css" rel="stylesheet">
+    <!--<link href="css/a07.css" rel="stylesheet">-->
     <style>
         #wrapper {
             margin: 0 auto;
@@ -43,6 +43,16 @@
         h1, h3 {
             color: #4682b4;
         }
+        .logo {
+            margin: 2rem auto;
+            line-height: 2rem;
+            font-size: 1.rem;
+        }
+        .logo a { color: #3e84b2; }
+        .logo a:hover {
+            color: #1d6aa5;
+            text-decoration: none;
+        }
     </style>
 </head>
 <body>
@@ -64,7 +74,7 @@
 </div>
 <script>
     var currentImg = 1;
-    var totalImg = 13;
+    var totalImg = 17;
     var main_img = document.getElementById('main_img');
     var counter = document.getElementById('counter');
     counter.textContent = currentImg + '/' + totalImg;
@@ -74,7 +84,7 @@
         var imgName;
         if(currentImg + num < 1) {
             alert('一番前の写真です！');
-        } else if(currentImg + num > 13) {
+        } else if(currentImg + num > totalImg) {
             alert('最後の写真です！');
         } else {
             currentImg = currentImg + num;
