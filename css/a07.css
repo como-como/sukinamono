@@ -1,6 +1,9 @@
 @charset "UTF-8";
+@import url(http://fonts.googleapis.com/earlyaccess/notosansjp.css);
 
 html {
+    width: 100%;
+    min-width: 1000px;
     min-height: 100%;
     overflow-y: scroll;
 }
@@ -9,15 +12,19 @@ body {
     margin: 0;
     padding: 0;
     color: #444;
-    font-family: 'Noto Sans', sans-serif;
+    font-family: 'Noto Sans JP', sans-serif;
     font-size: 1rem;
     line-height: 1.5rem;
+    /*
     background: -webkit-gradient(linear, left top, left bottom, color-stop(1.00, #c7c7c7), color-stop(0.85, #e3e3e3), color-stop(0.00, #fff));
     background: -webkit-linear-gradient(top, #fff 0%, #e3e3e3 85%, #c7c7c7 100%);
     background: -moz-linear-gradient(top, #fff 0%, #e3e3e3 85%, #c7c7c7 100%);
     background: -o-linear-gradient(top, #fff 0%, #e3e3e3 85%, #c7c7c7 100%);
     background: -ms-linear-gradient(top, #fff 0%, #e3e3e3 85%, #c7c7c7 100%);
     background: linear-gradient(to bottom, #fff 0%, #e3e3e3 85%, #c7c7c7 100%);
+    */
+    background: url(../img/a07_bg.jpg) no-repeat fixed;
+    background-size: cover;
 }
 a {
     text-decoration: none;
@@ -76,11 +83,10 @@ q:after  { content: close-quote }
 /* ------- common ------- */
 .wrapper {
     margin: 0 auto;
-    padding: 2rem 3rem;
+    padding: 20px 50px;
     width: 80%;
-    max-width: 1000px;
-    min-width: 600px;
-    background-color: rgba(255, 255, 255, 0.8);
+    min-width: 800px;
+    background-color: rgba(255, 255, 255, 0.5);
     position: relative;
 }
 
@@ -95,9 +101,9 @@ q:after  { content: close-quote }
     line-height: 2rem;
     font-size: 1.rem;
 }
-.logo a { color: #4682b4; }
+.logo a { color: #3e84b2; }
 .logo a:hover {
-    color: #3452aa;
+    color: #1d6aa5;
     text-decoration: none;
 }
 header {
@@ -108,51 +114,76 @@ header h2 {
     padding: 0;
     font-size: 1rem;
     line-height: 1rem;
+    text-align: center;
 }
 
-.box-area {
-    display: box;
-    display: -webkit-box;
-    display: -moz-box;
-}
-.box-area:after {
-    display: block;
-    clear: both;
-}
-.box-aboutme {
-    width: 30%;
-    min-height: 10rem;
-    margin: 0 3%;
-    background-color: #ecf7ca;
-}
-.box-aboutme2 {
-    background-color: #edd0e7;
-}
-.box-aboutme:first-child {
-    margin-left: 0;
-}
-.box-aboutme h3 {
-    margin: 0;
+.hover-cap {
+    margin: 2rem auto;
     padding: 0;
-    height: 5rem;
-    font-size: 2rem;
-    line-height: 5rem;
-    color: #fff;
-    background-color: #a7d28d;
+    width: 600px;
+    height: 200px;
 }
-.box-aboutme2 h3 {
-    background-color: #cc7eb1;
-}
-.box-aboutme p {
-    margin: 0;
-}
-.box-aboutme li {
-    list-style-type: circle;
-    list-style-position: inside;
+.hover-cap:first-child {
+    margin-top: 0;
 }
 
-.txt {
-    padding: 0.7rem;
+.fig-inner {
+    position: relative;
+    width: 600px;
+    height: 200px;
+    -webkit-perspective: 1000;
+    perspective: 1000;
+    -webkit-transition: .5s;
+    transition: .5s;
+    -webkit-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+}
+.hover-cap .ttl,
+.hover-cap figcaption {
+    position: absolute;
+    width: 600px;
+    height: 200px;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+}
+
+.hover-cap .ttl {
+    margin: 0;
+    /*background-color: rgba(255, 255, 255, 0.5);*/
+    border: 2px solid #777;
+    line-height: 200px;
+    font-size: 3rem;
+    color: #000;
+}
+.hover-cap figcaption {
+    padding: 1rem;
+    background-color: rgba(255, 255, 255, 0.5);
+    border: 2px solid #777;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+.hover-cap figcaption p,
+.hover-cap figcaption ul {
+    text-align: center;
+    font-size: 1.3rem;
+    line-height: 1.8rem;
+    position: relative;
+    top: 35%;
+    -webkit-transform: translate(0, -50%);
+    -ms-transform: translate(0, -50%);
+    transform: translate(0, -50%);
+}
+.hover-cap figcaption ul {
+    margin: 0;
+}
+.hover-cap figcaption ul li {
+    text-align: center;
+}
+.hover-cap:hover .fig-inner,
+.hover-cap figcaption {
+    -webkit-transform: rotateY(180deg);
+    transform: rotateY(180deg);
 }
 
 /* ------- nav ------- */
@@ -186,8 +217,10 @@ footer {
 .m-center { margin: 0 auto; }
 .mr-0_2rem { margin-right: 0.2rem; }
 
-.fs-0_8rem { font-size: 0.8rem }
 .fs-0_7rem { font-size: 0.7rem; }
+.fs-0_8rem { font-size: 0.8rem }
+.fs-0_9rem { font-size: 0.9rem }
+.fs-1rem { font-size: 1rem }
 
 .col-red { color: #cc3333; }
 .col-lgray { color: #ccc; }
