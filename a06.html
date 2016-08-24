@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>自己紹介と好きなもの</title>
+    <style>
+        #wrapper {
+            margin: 0 auto;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+<div id="wrapper">
+    <h1>厳征宇</h1>
+    <h2>自己紹介</h2>
+    <p>中国上海の出身です。よろしくお願いします！</p>
+    <h2>好きなもの</h2>
+    <p>食べる、散歩</p>
+    <h3>飯田橋周辺食べると散歩スポット</h3>
+    <div>
+        <img  id="main_img" src="img/IMG_01.JPG" width="640">
+    </div>
+    <div>
+        <img src="img/prev.png" id="prev">
+        <span id="counter"></span>
+        <img src="img/next.png" id="next">
+    </div>
+</div>
+<script>
+    var currentImg = 1;
+    var totalImg = 13;
+    var main_img = document.getElementById('main_img');
+    var counter = document.getElementById('counter');
+    counter.textContent = currentImg + '/' + totalImg;
+
+    var changImg = function(num) {
+        var imgNum;
+        var imgName;
+        if(currentImg + num < 1) {
+            alert('一番前の写真です！');
+        } else if(currentImg + num > 13) {
+            alert('最後の写真です！');
+        } else {
+            currentImg = currentImg + num;
+            if(currentImg < 10) {
+                imgNum = '0' + currentImg;
+            } else {
+                imgNum = currentImg;
+            }
+            imgName = 'img/IMG_' + imgNum + '.JPG';
+            main_img.setAttribute('src',imgName);
+            counter.textContent = currentImg + '/' + totalImg;
+        }
+    }
+
+    document.getElementById('prev').onclick = function() {
+        changImg(-1);
+    };
+    document.getElementById('next').onclick = function() {
+        changImg(1);
+    };
+</script>
+</body>
+</html>
