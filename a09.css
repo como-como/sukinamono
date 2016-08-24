@@ -1,0 +1,92 @@
+body {
+    font-family: 'Quicksand', "游ゴシック体", "Yu Gothic", YuGothic, "ヒラギノ角ゴシック Pro", "Hiragino Kaku Gothic Pro", 'メイリオ' , Meiryo , Osaka, "ＭＳ Ｐゴシック", "MS PGothic", sans-serif;
+}
+
+#wrapper {
+    margin: 0 auto;
+    width: 960px;
+    box-sizing: border-box;
+    border-style: solid;
+    border-width: 2px;
+    border-color: #dddddd;
+    background-color: white;
+    padding: 28px ;
+}
+
+table.company {
+    width: 900px;
+    margin: 0 auto;
+    border-collapse: separate;
+    border-spacing: 0px 5px;
+    font-size: 20px;
+    padding: 10px 0 0 0;
+}
+
+table.company th,
+table.company td {
+    padding: 15px;
+}
+
+table.company th {
+    background: #295890;
+    vertical-align: middle;
+    text-align: left;
+    width: 100px;
+    overflow: visible;
+    position: relative;
+    color: #fff;
+    font-weight: normal;
+    font-size: 20px;
+}
+
+table.company th:after {
+    left: 100%;
+    top: 50%;
+    border: solid transparent;
+    content: " ";
+    height: 0;
+    width: 0;
+    position: absolute;
+    pointer-events: none;
+    border-color: rgba(136, 183, 213, 0);
+    border-left-color: #295890;
+    border-width: 10px;
+    margin-top: -10px;
+
+}
+/* firefox */
+@-moz-document url-prefix() {
+    table.company th::after {
+        float: right;
+        padding: 0;
+        left: 30px;
+        top: 10px;
+        content: " ";
+        height: 0;
+        width: 0;
+        position: relative;
+        pointer-events: none;
+        border: 10px solid transparent;
+        border-left: #295890 10px solid;
+        margin-top: -10px;
+    }
+}
+
+table.company td {
+    background: #f8f8f8;
+    width: 360px;
+    padding-left: 20px;
+}
+
+h1 {
+    margin:  0 auto;
+    width: 900px;
+    font-size: 23px;
+    color: #000000;
+    padding: 12px 0;
+    border-top: 1px solid #000;
+    border-bottom: 1px solid #000;
+
+
+}
+
