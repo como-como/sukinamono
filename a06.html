@@ -7,25 +7,58 @@
         #wrapper {
             margin: 0 auto;
             text-align: center;
+            vertical-align: middle;
+        }
+        #counter {
+            /*display: inline-block;*/
+            margin-top: 10px;
+            height: 30px;
+            width: 40px;
+            /*padding-top: 10px;*/
+            float: left;
+            vertical-align: middle;
+            color: slategrey;
+            font-size: 16pt;
+        }
+        #prev {
+            width: 40px;
+            height: 40px;
+            background-image: url('img/prev.png');
+            float: left;
+        }
+        #next {
+            width: 40px;
+            height: 40px;
+            background-image: url('img/next.png');
+            float: left;
+        }
+        .toolbar {
+            /*overflow: hidden;*/
+            /*text-align: center;*/
+        }
+        .nav {
+            display: inline-block;
+        }
+        h1, h3 {
+            color: royalblue;
         }
     </style>
 </head>
 <body>
 <div id="wrapper">
-    <h1>厳征宇</h1>
-    <h2>自己紹介</h2>
-    <p>中国上海の出身です。よろしくお願いします！</p>
-    <h2>好きなもの</h2>
-    <p>食べる、散歩</p>
+    <h1>厳征宇の自己紹介</h1>
+    <p>中国上海の出身です。食べること、散歩することが好きです。よろしくお願いします！</p><br>
     <h3>飯田橋周辺食べると散歩スポット</h3>
     <div>
         <img  id="main_img" src="img/IMG_01.JPG" width="640">
     </div>
-    <div>
-        <img src="img/prev.png" id="prev">
-        <span id="counter"></span>
-        <img src="img/next.png" id="next">
-    </div>
+    <!--<div class="toolbar">-->
+        <div class="nav">
+            <div id="prev"></div>
+            <span id="counter"></span>
+            <div id="next"></div>
+        </div>
+    <!--</div>-->
 </div>
 <script>
     var currentImg = 1;
