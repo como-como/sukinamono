@@ -1,4 +1,5 @@
 @charset "UTF-8";
+@import url(http://fonts.googleapis.com/earlyaccess/notosansjp.css);
 
 html {
     width: 100%;
@@ -11,7 +12,7 @@ body {
     margin: 0;
     padding: 0;
     color: #444;
-    font-family: 'Noto Sans', sans-serif;
+    font-family: 'Noto Sans JP', sans-serif;
     font-size: 1rem;
     line-height: 1.5rem;
     /*
@@ -102,7 +103,7 @@ q:after  { content: close-quote }
 }
 .logo a { color: #3e84b2; }
 .logo a:hover {
-    color: #296bbc;
+    color: #1d6aa5;
     text-decoration: none;
 }
 header {
@@ -113,13 +114,17 @@ header h2 {
     padding: 0;
     font-size: 1rem;
     line-height: 1rem;
+    text-align: center;
 }
 
 .hover-cap {
-    margin: 0 auto;
+    margin: 2rem auto;
     padding: 0;
     width: 600px;
     height: 200px;
+}
+.hover-cap:first-child {
+    margin-top: 0;
 }
 
 .fig-inner {
@@ -133,9 +138,6 @@ header h2 {
     -webkit-transform-style: preserve-3d;
     transform-style: preserve-3d;
 }
-.hover-cap figcaption {
-    padding: 1rem;
-}
 .hover-cap .ttl,
 .hover-cap figcaption {
     position: absolute;
@@ -146,69 +148,42 @@ header h2 {
 }
 
 .hover-cap .ttl {
-    -webkit-transform: translate(-50%,-50%);
-    -ms-transform: translate(-50%,-50%);
-    transform: translate(-50%,-50%);
-    z-index: 2;
+    margin: 0;
+    /*background-color: rgba(255, 255, 255, 0.5);*/
+    border: 2px solid #777;
+    line-height: 200px;
+    font-size: 3rem;
+    color: #000;
 }
 .hover-cap figcaption {
-    background: #fff;
-    border: 2px solid #666;
+    padding: 1rem;
+    background-color: rgba(255, 255, 255, 0.5);
+    border: 2px solid #777;
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
     box-sizing: border-box;
+}
+.hover-cap figcaption p,
+.hover-cap figcaption ul {
+    text-align: center;
+    font-size: 1.3rem;
+    line-height: 1.8rem;
+    position: relative;
+    top: 35%;
+    -webkit-transform: translate(0, -50%);
+    -ms-transform: translate(0, -50%);
+    transform: translate(0, -50%);
+}
+.hover-cap figcaption ul {
+    margin: 0;
+}
+.hover-cap figcaption ul li {
+    text-align: center;
 }
 .hover-cap:hover .fig-inner,
 .hover-cap figcaption {
     -webkit-transform: rotateY(180deg);
     transform: rotateY(180deg);
-}
-
-/* ----------------------------------- */
-.box-area {
-    display: box;
-    display: -webkit-box;
-    display: -moz-box;
-}
-.box-area:after {
-    display: block;
-    clear: both;
-}
-.box-aboutme {
-    width: 30%;
-    min-height: 10rem;
-    margin: 0 3%;
-    /*background-color: #ecf7ca;*/
-    background-color: rgba(255, 255, 255, 0.7);
-}
-.box-aboutme2 {
-    background-color: #edd0e7;
-}
-.box-aboutme:first-child {
-    margin-left: 0;
-}
-.box-aboutme h3 {
-    margin: 0;
-    padding: 0;
-    height: 5rem;
-    font-size: 2rem;
-    line-height: 5rem;
-    color: #fff;
-    background-color: #a7d28d;
-}
-.box-aboutme2 h3 {
-    background-color: #cc7eb1;
-}
-.box-aboutme p {
-    margin: 0;
-}
-.box-aboutme li {
-    list-style-type: circle;
-    list-style-position: inside;
-}
-
-.txt {
-    padding: 0.7rem;
 }
 
 /* ------- nav ------- */
@@ -242,8 +217,10 @@ footer {
 .m-center { margin: 0 auto; }
 .mr-0_2rem { margin-right: 0.2rem; }
 
-.fs-0_8rem { font-size: 0.8rem }
 .fs-0_7rem { font-size: 0.7rem; }
+.fs-0_8rem { font-size: 0.8rem }
+.fs-0_9rem { font-size: 0.9rem }
+.fs-1rem { font-size: 1rem }
 
 .col-red { color: #cc3333; }
 .col-lgray { color: #ccc; }
